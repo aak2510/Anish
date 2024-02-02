@@ -1,0 +1,99 @@
+html {
+    background: url("../../sharedImages/waiter_homepage.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-family: "Monaco", "Monaco", monospace;
+}
+
+.homepageButton a {
+    background-color: #555555;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+.logOut a {
+    background-color: red;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.topright {
+    position: absolute;
+    top: 8px;
+    right: 16px;
+    font-size: 18px;
+}
+
+.topleft {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+    font-size: 18px;
+
+}
+
+
+.Messages {
+    text-align: center;
+    width: 350px;
+    min-height: 350px;
+    border-radius: 5px;
+    margin: 2% auto;
+    margin-top: 10%;
+    padding: 2%;
+    background-color: black;
+    color: white;
+}
+
+
+/* buttons hover */
+.homepageButton:hover,.logOut:hover {
+    transform: translatey(3px);
+    box-shadow: none;
+}
+
+#assign-table {
+    width: 250px;
+    min-height: 250px;
+    border-radius: 5px;
+    margin: 2% auto;
+    margin-top: 10%;
+    padding: 2%;
+    background-color: black;
+    text-align: center;
+}
+
+form{
+    margin: 2% auto;
+    margin-top: 10%;
+    padding: 2%;
+}
+
+input[type=submit] {
+    background-color: white;
+    font-size: 16px;
+    color: black;
+    padding: 12px;
+    border-radius: 12px;
+    display: inline;
+    text-align: center;
+}
+
+input[type=text] {
+    background-color: white;
+    font-size: 18px;
+    color: black;
+    padding: 10px;
+    border-radius: 15px;
+    display: inline;
+    text-align: center;
+    border: 0px none;
+}

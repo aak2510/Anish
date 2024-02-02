@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Oaxaca: Homepage</title>
+  <link rel="stylesheet" href="../home_page/style.css">
+  <meta charset="UTF-8">
+  <style>
+    html {
+      font-family: 'Alike Angular';
+      font-size: 20px;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <html class="home-bg">
+
+  <div class="flex-logo">
+    <img src="logo-2.png" class="center" alt="logo" width="350" height="350" style="top: 0px" />
+  </div>
+
+
+  <div class="topnav">
+    <a class="active" href="../home_page/home.html">Homepage</a>
+    <a href="../branch_info/branch_info.php">Branch Info</a>
+    <a href="../menu_page/menu.php">Menu</a>
+    <a href="../waiter_page/customerNotifying.php">Call a waiter!</a>
+    <a href="../order_page/paymentPage.php">Payment</a>
+    <a href="../login_page/login.php">Employee Login</a>
+    <div class="dropdown">
+    <button class="dropbtn" onclick="myFunction()">Order
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content" id="myDropdown">
+      <a href="../order_page\indexOrder.php">Make an order</a>
+      <a href="../view_order_page\viewOrder.php">View your orders</a>
+    </div>
+    </div>
+  </div>
+
+  <script>
+    function myFunction() {
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    window.onclick = function(e) {
+      if (!e.target.matches('.dropbtn')) {
+      var myDropdown = document.getElementById("myDropdown");
+        if (myDropdown.classList.contains('show')) {
+          myDropdown.classList.remove('show');
+        }
+      }
+    }
+  </script>
+  
+  <h1>Dive into our delicious Mexican selection!</h1>
+
+  <p>Welcome to Oaxaca: A restaurant group that has been slowly growing in London and UK presence over the
+    last 10 years. We take pride in our menu, a unique style of the best Mexican street food alongside our outstanding
+    table service. Take a look
+    at our diverse digital menu, and get ready to experience table service that will deliver you our delicious foods at
+    the perfect time.
+    To view the menu, you can use the "Menu" button below or the menu bar to redirect you to the menu page. To find out
+    about our 25 branches, click the
+    "Branches" button, or navigate using the menu bar. Or if you'd like to order your food, you're only a couple of
+    clicks away. We have designed this
+    webpage to provide you with all the help you need to unlock the best customer service. After all, we only want the
+    best for our valued
+    customers. Enjoy!</p>
+
+  <div style="float:left; margin-left:40%">
+    <form style="display: inline" action="../order_page/indexOrder.php">
+      <input style="text-align: center;" type="submit" value="Order now!" />
+    </form>
+
+    <form style="display: inline" action="../branch_info/Branch-Info.html">
+      <input style="text-align: center;" type="submit" value="View our branches!" />
+    </form>
+    <br>
+    <br>
+  </div>
+
+
+  <div style="padding:50px" class="slideshow-container">
+
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 3</div>
+      <img src="restaurant-1.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 3</div>
+      <img src="restaurant-2.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 3</div>
+      <img src="restaurant-3.jpg" style="width:100%">
+    </div>
+
+
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+  <br>
+
+  <script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("dot");
+      if (n > slides.length) { slideIndex = 1 }
+      if (n < 1) { slideIndex = slides.length }
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += " active";
+    }
+  </script>
+
+  <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+  </div>
+
+
+  <p>For our staff: Please find the staff login button at the top right of the screen. You will be redirected to the
+    Staff login page for the restaurant management system.</p>
+
+  <div class="footer">
+    <div class="bottomnav">
+      <a class="active" href="../home_page/home.html">Homepage</a>
+      <a href="../branch_info/branch_info.php">Branch Info</a>
+      <a href="../menu_page/menu.php">Menu</a>
+      <a href="../order_page/indexOrder.php">Order</a>
+      <a href="../waiter_page/customerNotifying.php">Call a waiter!</a>
+      <a href="../order_page/paymentPage.php">Payment</a>
+      <a href="../login_page/login.php">Employee Login</a>
+    </div>
+    <h4>© 2022 RHUL CS - Group 32 </h4>
+  </div>
+
+
+
+</body>
+
+</html>

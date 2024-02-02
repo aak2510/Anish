@@ -1,0 +1,98 @@
+/* Need to change the structure of the background image here! */
+html {
+    background: url('../../sharedImages/waiter_homepage.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-family: "Monaco", "Monaco", monospace;
+}
+
+/* basic css for the notification icon and number */
+.icon-button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+}
+
+.icon-button__badge {
+    position: absolute;
+    right: -1px;
+    width: 25px;
+    height: 25px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+
+}
+
+/* Removes the underline in the hyper links */
+button a {
+    text-decoration: none;
+}
+
+/* Create a red Logout button for the waiter */
+.logOut a {
+    background-color: red;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.header {
+    padding: 5px;
+    text-align: center;
+    color: white;
+    font-size: 30px;
+}
+
+.waiter_buttons {
+    display: block;
+    max-width: 500px;
+    margin: auto;
+}
+
+.waiter_buttons a {
+    background-color: black;
+    color: white;
+    padding: 25px;
+    border-radius: 25px;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+}
+
+.buttons {
+    display: block;
+    width: 100%;
+    border: none;
+    background-color: black;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    margin-bottom: 50px;
+    border-radius: 25px;
+    opacity: 1;
+}
+
+.topright {
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    font-size: 18px;
+}
+
+.topleft {
+    position: absolute;
+    top: 30px;
+    left: 20px;
+    font-size: 18px;
+
+}

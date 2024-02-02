@@ -1,0 +1,2 @@
+Release0.1/
+  This version has now dealt with the issue of the "Stream closed" Exception appearing on the screen after termination of the calculator.

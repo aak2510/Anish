@@ -1,0 +1,1150 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>2</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>578</x>
+      <y>566</y>
+      <w>48</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Enumeration&gt;&gt;
+__uk.ac.rhul.cs2800::Symbol__
+A list of the non number tokens 
+possible in an expression
+--
+Attributes
+-string: String
+--
+Responsibilities
+&lt;&lt;constuctor&gt;&gt; -Symbol(String string)
++toString():String
+LEFT_BRACKET
+RIGHT_BRACKET
+TIMES
+DIVIDE
+PLUS
+MINUS
+INVALID</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>660</x>
+      <y>556</y>
+      <w>54</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>__uk.ac.rhul.cs2800::Entry__
+Values stored in a Stack
+--
+Attributes
+-number: float
+-str: String 
+-other: Symbol
+-type: Type
+--
+Responsibilities
+&lt;&lt;constuctor&gt;&gt; +Entry(float value)
+&lt;&lt;constuctor&gt;&gt; +Entry(String string)
+&lt;&lt;constuctor&gt;&gt; +Entry(Symbol which)
++getValue(): float
+                  {exception = BadType}
++getString(): String
+                  {exception = BadType}
++getSymbol(): Symbol
+                  {exception = BadType}
++getType(): Type
++setValue(value: float)
++setString(string: String)
++setSymbol(symbol: Symbol)
++equals(obj Object): boolean
++hashCode(): int
++toString(): String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>754</x>
+      <y>570</y>
+      <w>58</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Enumeration&gt;&gt;
+__uk.ac.rhul.cs2800::Type__
+A list of the types of Values 
+an Entry can represent
+--
+Attributes
+-stringPrintable: String
+--
+Responsibilities
+&lt;&lt;constuctor&gt;&gt; -Type(String stringPrintable)
++toString():String
+NUMBER
+SYMBOL
+STRING
+INVALID</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>662</x>
+      <y>492</y>
+      <w>48</w>
+      <h>46</h>
+    </coordinates>
+    <panel_attributes>__uk.ac.rhul.cs2800::Stack__
+This class represents a 
+Stack of Entry Values
+--
+*Attributes*
+-size: int
+-entries: List&lt;Entry&gt;
+--
+*Responsibilities*
++size(): int
++push(entry: Entry)
++pop(): Entry
+        {Exception = EmptyStack}
++top(): Entry
+        {Exception = EmptyStack}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>712</x>
+      <y>578</y>
+      <w>46</w>
+      <h>26</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+                       &lt;&lt;Aggregation&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;210.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>624</x>
+      <y>572</y>
+      <w>40</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+
+
+
+&lt;&lt;Aggregation&gt;&gt;</panel_attributes>
+    <additional_attributes>180.0;10.0;10.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>684</x>
+      <y>536</y>
+      <w>10</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+bg=black
+0..*</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>612</x>
+      <y>488</y>
+      <w>54</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+
+
+&lt;&lt;Facade&gt;&gt;
+bg=black</panel_attributes>
+    <additional_attributes>10.0;10.0;250.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>704</x>
+      <y>430</y>
+      <w>50</w>
+      <h>58</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Facade&gt;&gt;
+__uk.ac.rhul.cs2800::OpStack__
+The Shunting Yard algorithm only 
+uses a Stack of Symbol so we provide
+a facade for this, and hide the 
+complexities of the system
+--
+Attributes
+-opStack: Stack
+--
+Responsibilities
++size(): int
++isEmpty(): boolean
++pop(): float
+       {Exception = EmptyStack}
++push(i: Symbol)
++top(): Symbol
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>590</x>
+      <y>432</y>
+      <w>48</w>
+      <h>58</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Facade&gt;&gt;
+__uk.ac.rhul.cs2800::NumStack__
+Since Reverse Polish evaluation only 
+deals with a Stack of numeric values
+we provide a facade to hide the 
+complexities of the system
+--
+Attributes
+-numStack: Stack
+--
+Responsibilities
++isEmpty(): boolean
++pop(): float
+       {Exception = EmptyStack}
++size(): int
++push(i: float)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>708</x>
+      <y>486</y>
+      <w>28</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+bg=black
+&lt;&lt;Facade&gt;&gt;</panel_attributes>
+    <additional_attributes>110.0;10.0;10.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>766</x>
+      <y>430</y>
+      <w>58</w>
+      <h>58</h>
+    </coordinates>
+    <panel_attributes>__uk.ac.rhul.cs2800::StrStack__
+The StrStack is used to store 
+the result of previous calculations
+so that the user can go through the 
+history of the calculations they 
+have done. We can use a facade to therefore
+build a stack of this sort.
+--
+Attributes
+-strStack: Stack
+--
+Responsibilities
++size(): int
++isEmpty(): boolean
++pop(): String
+       {Exception = EmptyStack}
++push(string: String)
++top(): String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>708</x>
+      <y>486</y>
+      <w>80</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+bg=black
+                                &lt;&lt;Facade&gt;&gt;</panel_attributes>
+    <additional_attributes>380.0;10.0;10.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>642</x>
+      <y>432</y>
+      <w>54</w>
+      <h>26</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+__uk.ac.rhul.cs2800::Calculator__
+Allows calculations of string expressions
+--
+Responsibilites
++evaluate(expression: String): float
+                 {Exception = InvalidException}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>618</x>
+      <y>404</y>
+      <w>38</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+                &lt;&lt;Implements&gt;&gt;</panel_attributes>
+    <additional_attributes>170.0;140.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>590</x>
+      <y>352</y>
+      <w>62</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Client&gt;&gt;
+__uk.ac.rhul.cs2800::RevPolishCalc__
+Evaluates Reverse Polish Expressions. 
+Also acts as a client to the Operator Factory, 
+providing information about the type of operator 
+it needs for calculations through the use of 
+Symbol Enums.
+--
+Attributes
+-numValues: NumStack
+--
+Responsibilities
++errorChecking(expression: String)
+                          {Exception = InvalidException}
++validOperator(test: String): Symbol
++evaluate(expression: String): float
+                           {Exception = InvalidException}
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>256</x>
+      <y>312</y>
+      <w>72</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Concrete Product&gt;&gt;
+__uk.ac.rhul.cs2800::DivideOperation__
+A concrete method used to divide two
+operands.
+--
+Responsibilities
++calculate(denominator: float, numerator: float): float</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>368</x>
+      <y>260</y>
+      <w>64</w>
+      <h>22</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+__uk.ac.rhul.cs2800::OperatorType__
+Used to calculate the expression on 
+the operator specifed by the factory.
+--
+Responsibilities
++calculate(operand1: float, operand2: float): float</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>370</x>
+      <y>360</y>
+      <w>62</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Factory&gt;&gt;
+__uk.ac.rhul.cs2800::OperatorFactory__
+A factory which is used to generate 
+the correct operator calculation.
+--
+Responsibilities
+__+enumType(operator: Symbol): OperatorType__</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>330</x>
+      <y>312</y>
+      <w>72</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Concrete Product&gt;&gt;
+__uk.ac.rhul.cs2800::PlusOperation__
+A concrete method used to add two
+operands.
+--
+Responsibilities
++calculate(operand1: float, operand2: float): float</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>404</x>
+      <y>312</y>
+      <w>72</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Concrete Product&gt;&gt;
+__uk.ac.rhul.cs2800::MinusOperation__
+A concrete method used to subtract two
+operands.
+--
+Responsibilities
++calculate(operand1: float, operand2: float): float</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>478</x>
+      <y>312</y>
+      <w>72</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Concrete Product&gt;&gt;
+__uk.ac.rhul.cs2800::MultiplyOperation__
+A concrete method used to multiply two
+operands.
+--
+Responsibilities
++calculate(operand1: float, operand2: float): float</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>400</x>
+      <y>334</y>
+      <w>44</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+                     &lt;&lt;creates&gt;&gt;
+                     &lt;&lt;Association&gt;&gt;</panel_attributes>
+    <additional_attributes>200.0;10.0;10.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>368</x>
+      <y>334</y>
+      <w>38</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+             &lt;&lt;creates&gt;&gt;
+             &lt;&lt;Association&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;170.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>288</x>
+      <y>334</y>
+      <w>118</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+            &lt;&lt;creates&gt;&gt;
+            &lt;&lt;Association&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;570.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>430</x>
+      <y>266</y>
+      <w>176</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Dependecy&gt;&gt;
+lt=&lt;.
+</panel_attributes>
+    <additional_attributes>10.0;20.0;860.0;20.0;860.0;430.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>430</x>
+      <y>368</y>
+      <w>164</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;Dependency&gt;&gt;
+Asks for a new object</panel_attributes>
+    <additional_attributes>10.0;20.0;800.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>400</x>
+      <y>334</y>
+      <w>108</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+                                        &lt;&lt;creates&gt;&gt;
+                                        &lt;&lt;Association&gt;&gt;</panel_attributes>
+    <additional_attributes>520.0;10.0;10.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>294</x>
+      <y>280</y>
+      <w>98</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+
+
+&lt;&lt;Implements&gt;&gt;</panel_attributes>
+    <additional_attributes>470.0;10.0;10.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>368</x>
+      <y>280</y>
+      <w>38</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+&lt;&lt;Implements&gt;&gt;</panel_attributes>
+    <additional_attributes>150.0;10.0;10.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>402</x>
+      <y>280</y>
+      <w>44</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+
+
+
+&lt;&lt;Implements&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;200.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>416</x>
+      <y>280</y>
+      <w>98</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+
+
+&lt;&lt;Implements&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;470.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>670</x>
+      <y>352</y>
+      <w>66</w>
+      <h>58</h>
+    </coordinates>
+    <panel_attributes>__uk.ac.rhul.cs2800::StandardCalc__
+Evaluates infix String expressions. Its does this by 
+Implementing the Shunting Yard Algorithm to 
+convert infix expressions to postfix.
+--
+Attributes
+-opStack: OpStack
+-rpCalc: RevPolishCalc
+--
+Responsibilities
++getPrecedenceLevel(operator: String): int
++bracketsChecker(expression: String): boolean
++operatorSymbol(test: String): Symbol
++expressionChecker(expression: String): boolean
+                                 {Exception = InvalidException}
++shuntingYard(expression: String): String
++evaluate(expression: String): float
+                                 {Exception = InvalidException}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>670</x>
+      <y>408</y>
+      <w>40</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+                                 
+                       &lt;&lt;Implements&gt;&gt;</panel_attributes>
+    <additional_attributes>20.0;120.0;170.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>710</x>
+      <y>408</y>
+      <w>32</w>
+      <h>26</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+ &lt;&lt;Association&gt;&gt;
+bg=black</panel_attributes>
+    <additional_attributes>10.0;10.0;100.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>734</x>
+      <y>382</y>
+      <w>60</w>
+      <h>52</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+                        &lt;&lt;Association&gt;&gt;
+bg=black</panel_attributes>
+    <additional_attributes>10.0;10.0;280.0;240.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>600</x>
+      <y>404</y>
+      <w>22</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+bg=black
+&lt;&lt;Assocation&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>632</x>
+      <y>268</y>
+      <w>66</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Model&gt;&gt;
+uk.ac.rhul.cs2800::CalcModel
+Overall Model of the calculator. 
+This acts as the main facade to hide 
+the overall system complexites and build.
+Also store the result of an expression.
+--
+Attributes
+-standard: Calculator
+-revPolish: Calculator
+-revPolishStrStack: StrStack
+-standardStrStack: StrStack
+--
+Responsibilities
++evaluate(expression: String, infix: boolan): float</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>618</x>
+      <y>314</y>
+      <w>50</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+bg=black
+
+                    &lt;&lt;Composition&gt;&gt;</panel_attributes>
+    <additional_attributes>230.0;10.0;10.0;190.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>666</x>
+      <y>314</y>
+      <w>42</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+bg=black
+&lt;&lt;Composition&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;180.0;190.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>892</x>
+      <y>236</y>
+      <w>88</w>
+      <h>46</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Controller	&gt;&gt;
+__uk.ac.rhul.cs2800::CalcController__
+Creates a view and a model. 
+It also adds itself as an observer to the view
+so that asynchronous changes can be observed
+--
+Attributes
+-model: CalcModel
+-view: ViewInterface
+-isInfix: boolean
+--
+Responsibilities
+&lt;&lt;constuctor&gt;&gt; +CalcController(model: CalcModel, view ViewInterface)
+-expressionType(t: OpType)
+-calculate()
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>926</x>
+      <y>450</y>
+      <w>56</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+__uk.ac.rhul.cs2800::ViewInterface__
+A set of methods that allows a controller 
+to be added when using a user interface
+--
+Responsibilities
++getString(): String
++setAnswer(str: String)
++addCalcObserver(f: Runnable)
++addTypeObserver(l: Consumer&lt;OpType&gt;)
++menu()
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>854</x>
+      <y>546</y>
+      <w>72</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;View&gt;&gt;
+__uk.ac.rhul.cs2800::AsciiView__
+A text based interface which is automatically 
+used if the program is started from the command line.
+This is runs on the basis of menu options.
+--
+Attributes
+-expression: String
+-answer: String
+-calc: Runnable
+-changeOpType: Consumer&lt;OpType&gt;
+-br: BufferedRead
+--
+Responsibilities
+-menuOptions()
+-evaluate()
+-calculate()
+-infixCalc()
+-postfixCalc()
+-questionMaker()
++menu()
++getString(): String
++setAnswer(str: String)
++addCalcObserver(f: Runnable)
++addTypeObserver(l: Consumer&lt;OpType&gt;)
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>888</x>
+      <y>484</y>
+      <w>66</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+   &lt;&lt;implements&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;310.0;310.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>862</x>
+      <y>280</y>
+      <w>56</w>
+      <h>270</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+</panel_attributes>
+    <additional_attributes>10.0;1330.0;260.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>908</x>
+      <y>280</y>
+      <w>48</w>
+      <h>174</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+</panel_attributes>
+    <additional_attributes>220.0;850.0;10.0;490.0;110.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>696</x>
+      <y>252</y>
+      <w>200</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+</panel_attributes>
+    <additional_attributes>10.0;220.0;980.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>848</x>
+      <y>210</y>
+      <w>236</w>
+      <h>148</h>
+    </coordinates>
+    <panel_attributes>Controller
+fontsize=30</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>248</x>
+      <y>210</y>
+      <w>584</w>
+      <h>498</h>
+    </coordinates>
+    <panel_attributes>fontsize=30
+Model Assembly</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>848</x>
+      <y>370</y>
+      <w>236</w>
+      <h>338</h>
+    </coordinates>
+    <panel_attributes>fontsize=30
+View Assembly</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>890</x>
+      <y>310</y>
+      <w>20</w>
+      <h>14</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Observer&gt;&gt;
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>930</x>
+      <y>312</y>
+      <w>20</w>
+      <h>14</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Observer&gt;&gt;
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>512</x>
+      <y>270</y>
+      <w>10</w>
+      <h>6</h>
+    </coordinates>
+    <panel_attributes>Uses
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>658</x>
+      <y>660</y>
+      <w>58</w>
+      <h>34</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Exception&gt;&gt;
+uk.ac.rhul.cs2800::BadTypeException
+Thrown when the user trys to call upon 
+an objects field whose values are updated
+and are now null or Invalid
+--
+Attributes
+__-serialVersionUID: long__
+--
+Responsibilities
+&lt;&lt;constructor&gt;&gt;+BadTypeException(String str)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>684</x>
+      <y>642</y>
+      <w>18</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;throws&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>490</x>
+      <y>548</y>
+      <w>42</w>
+      <h>6</h>
+    </coordinates>
+    <panel_attributes>java.lang.Exception
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>508</x>
+      <y>552</y>
+      <w>154</w>
+      <h>132</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+&lt;&lt;extends&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;640.0;750.0;640.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>542</x>
+      <y>508</y>
+      <w>64</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Exception&gt;&gt;
+uk.ac.rhul.cs2800::InvalidExpression
+Thrown if the user enters an expression
+which is not of the right type or is 
+incorrectly formulated
+--
+Attributes
+__-serialVersionUID__
+--
++&lt;&lt;constructor&gt;&gt;+InvalidException(String string)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>530</x>
+      <y>538</y>
+      <w>46</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+&lt;&lt;extends&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;70.0;210.0;70.0;210.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>604</x>
+      <y>456</y>
+      <w>54</w>
+      <h>78</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;throws&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;370.0;250.0;370.0;250.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1018</x>
+      <y>464</y>
+      <w>50</w>
+      <h>22</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Enumeration&gt;&gt;
+uk.ac.rhul.cs2800::OpType
+The different types of 
+calculations that can be performed.
+--
+INFIX
+POSTFIX</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>980</x>
+      <y>470</y>
+      <w>42</w>
+      <h>8</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+&lt;&lt;Aggregation&gt;&gt;</panel_attributes>
+    <additional_attributes>190.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>666</x>
+      <y>174</y>
+      <w>166</w>
+      <h>98</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+&lt;&lt;Association&gt;&gt;</panel_attributes>
+    <additional_attributes>810.0;10.0;10.0;470.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>802</x>
+      <y>150</y>
+      <w>58</w>
+      <h>26</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Main - Driver&gt;&gt;
+uk.ac.rhul.cs2800::Driver
+Runs the Model Assembly of 
+the calculator using a User Interface.
+--
+Responsibilities
++main(args: String[])</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>852</x>
+      <y>174</y>
+      <w>62</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+&lt;&lt;Association&gt;&gt;
+</panel_attributes>
+    <additional_attributes>10.0;10.0;290.0;310.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>858</x>
+      <y>158</y>
+      <w>258</w>
+      <h>304</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+&lt;&lt;Association&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;1180.0;10.0;1180.0;1500.0;620.0;1500.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>778</x>
+      <y>132</y>
+      <w>114</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>fontsize=30
+Main</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1016</x>
+      <y>398</y>
+      <w>42</w>
+      <h>38</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+uk.ac.rhul.cs2800::Runnable
+Functional interface which
+used to notify observers in 
+the CalcController
+--
+Responsibilities
++notifyObservers();</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>972</x>
+      <y>418</y>
+      <w>48</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>220.0;10.0;10.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>962</x>
+      <y>280</y>
+      <w>66</w>
+      <h>122</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+&lt;&lt;Association&gt;&gt;
+     &lt;&lt;Uses&gt;&gt;</panel_attributes>
+    <additional_attributes>310.0;590.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>

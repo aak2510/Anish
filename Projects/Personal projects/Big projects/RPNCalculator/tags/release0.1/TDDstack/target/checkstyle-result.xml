@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="8.29">
+<file name="D:\Eclipse\TDDstack\src\main\java\uk\ac\rhul\cs2800\AsciiView.java">
+</file>
+<file name="D:\Eclipse\TDDstack\src\main\java\uk\ac\rhul\cs2800\BadTypeException.java">
+</file>
+<file name="D:\Eclipse\TDDstack\src\main\java\uk\ac\rhul\cs2800\CalcController.java">
+</file>
+<file name="D:\Eclipse\TDDstack\src\main\java\uk\ac\rhul\cs2800\CalcModel.java">
+</file>
+<file name="D:\Eclipse\TDDstack\src\main\java\uk\ac\rhul\cs2800\Calculator.java">
+</file>
+<file name="D:\Eclipse\TDDstack\src\main\java\uk\ac\rhul\cs2800\DivideOperation.java">
+</file>
+<file name="D:\Eclipse\TDDstack\src\main\java\uk\ac\rhul\cs2800\Driver.java">
+</file>
+<file name="D:\Eclipse\TDDstack\src\main\java\uk\ac\rhul\cs2800\Entry.java">
+</file>
+<file name="D:\Eclipse\TDDstack\src\main\java\uk\ac\rhul\cs2800\InvalidException.java">
+</file>
+<file name="D:\Eclipse\TDDstack\src\main\java\uk\ac\rhul\cs2800\MinusOperation.java">
+</file>
+<file name="D:\Eclipse\TDDstack\src\main\java\uk\ac\rhul\cs2800\MultiplyOperation.java">
+</file>
+<file name="D:\Eclipse\TDDstack\src\main\java\uk\ac\rhul\cs2800\NumStack.java">
+</file>
+<file name="D:\Eclipse\TDDstack\src\main\java\uk\ac\rhul\cs2800\OperatorFactory.java">
+</file>
+<file name="D:\Eclipse\TDDstack\src\main\java\uk\ac\rhul\cs2800\OperatorType.java">
+</file>
+<file name="D:\Eclipse\TDDstack\src\main\java\uk\ac\rhul\cs2800\OpStack.java">
+</file>
+<file name="D:\Eclipse\TDDstack\src\main\java\uk\ac\rhul\cs2800\OpType.java">
+</file>
+<file name="D:\Eclipse\TDDstack\src\main\java\uk\ac\rhul\cs2800\PlusOperation.java">
+</file>
+<file name="D:\Eclipse\TDDstack\src\main\java\uk\ac\rhul\cs2800\RevPolishCalc.java">
+</file>
+<file name="D:\Eclipse\TDDstack\src\main\java\uk\ac\rhul\cs2800\Runnable.java">
+</file>
+<file name="D:\Eclipse\TDDstack\src\main\java\uk\ac\rhul\cs2800\Stack.java">
+</file>
+<file name="D:\Eclipse\TDDstack\src\main\java\uk\ac\rhul\cs2800\StandardCalc.java">
+</file>
+<file name="D:\Eclipse\TDDstack\src\main\java\uk\ac\rhul\cs2800\StrStack.java">
+</file>
+<file name="D:\Eclipse\TDDstack\src\main\java\uk\ac\rhul\cs2800\Symbol.java">
+</file>
+<file name="D:\Eclipse\TDDstack\src\main\java\uk\ac\rhul\cs2800\Type.java">
+</file>
+<file name="D:\Eclipse\TDDstack\src\main\java\uk\ac\rhul\cs2800\ViewInterface.java">
+</file>
+</checkstyle>

@@ -1,0 +1,2 @@
+This is a folder of projects that have either been completed. 
+The web portfolio needs to be updated and as such some functionality may not work to its full potential - a demo of this can be seen here: https://anishkanda.netlify.app/

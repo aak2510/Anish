@@ -1,0 +1,155 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+
+
+}
+
+body {
+    font-family: Helvetica;
+    color: seashell;
+    font-size: 22px;
+    opacity: 0.9;
+    background-color: black;
+    text-align: center
+}
+
+a, a:link, a:visited,a:active{
+    text-decoration: none;
+    color: inherit;
+}
+
+li:hover{
+    color:red;
+}
+
+section{
+    padding-top: 100px;
+}
+
+.header-flex-container {
+    position: fixed;
+    display: flex;
+    background-color: black;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 69px;
+    border-bottom: 1px solid seashell;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+}
+
+.header-flex-container .logo img {
+    height: 50px;
+
+}
+
+nav ul li {
+    display: inline;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+
+}
+
+nav ul li+li {
+    margin-left: 10px;
+
+}
+
+
+.hero {
+    background-image: url('../Images/background.jpg');
+    width: 1200px;
+    height: 700px;
+    margin: 69px auto 0 auto;
+    position: relative;
+}
+
+
+.text-over-hero {
+    background-color: black;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+}
+
+
+.Tea-of-the-month {
+    width: 1000px;
+    height: 700px;
+    margin: 0 auto;
+    padding-top: 69px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 100px;
+
+
+}
+
+
+.tea-images-flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+
+}
+
+.Tea-of-the-month img {
+    height: 200px;
+    width: 300px;
+}
+
+.Tea-of-the-month figcaption {
+    margin-top: 10px;
+}
+
+.locations-sections {
+    background-image: url('../Images/locations.jpg');
+    width: 1200px;
+    height: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px 0;
+
+}
+
+.location-flex {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 0 40px;
+
+}
+
+
+.location-flex .location {
+    width: 300px;
+    height: 300px;
+    background-color: black;
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.contact-flex {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+footer {
+    margin-left: 20px;
+    text-align: left;
+}

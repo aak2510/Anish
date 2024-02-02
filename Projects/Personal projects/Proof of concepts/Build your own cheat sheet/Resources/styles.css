@@ -1,0 +1,47 @@
+body{
+    background-color: #c2bebe;
+    font-family: Arial;
+}
+
+.main-content{
+    width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+
+}
+
+h3{
+    color: #0077ff;
+    font-size: 25px;
+}
+
+table{
+    width: 75%;
+    text-align: left;
+    margin: 0 auto;
+    border: 2px solid #0077ff;
+    padding: 5px;
+}
+
+th, td{
+    border-bottom: 2px solid #0077ff;
+    border-collapse: collapse;
+    padding: 3px;
+    
+}
+
+th{
+    background-color: rgb(247, 97, 122);
+}
+tr{
+    background-color: #46e2f7
+}
+
+table td span{
+    background-color: beige;
+    font-family: monospace;
+}
+
+.table-2{
+    margin-top: 50px;
+}

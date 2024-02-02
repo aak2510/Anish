@@ -16,3 +16,4 @@ I have experience using a number of different programming languages, some of whi
 * Haskell
 
 
+Feel free to explore my repo for projects that I am currently working on.

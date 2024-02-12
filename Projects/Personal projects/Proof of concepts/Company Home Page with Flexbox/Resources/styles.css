@@ -1,0 +1,139 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+
+}
+
+body{
+    padding: 1.5rem;
+    font-family: "Lexend Mega", sans-serif;
+    color: black;
+    background-color: white;
+    font-size: 22px;
+    text-align: center;
+
+}
+
+.section{
+    margin-top: 3.125rem;
+    padding-top: 3.125rem;
+    height: 30rem;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 1.5rem;
+}
+
+.navbar {
+    display: flex;
+    width: 75%;
+    justify-content: space-evenly
+}
+
+.navbar p {
+    text-decoration: underline;
+    text-underline-offset: 0.2rem;
+}
+
+.navbar p:hover {
+    color: red;
+    cursor: pointer;
+}
+
+a, a:hover, a:focus, a:active {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+
+.MissionStatement{
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero{
+    background-image: url("./images/hero-image.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width:100%;
+   
+}
+
+.statement{
+    background-color: white;
+    width: 100%;
+}
+
+.statement p {
+    font-weight: bold;
+    word-spacing: 0.75rem;
+}
+
+.portfolio{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.portfolio .image-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-evenly;
+}
+
+.portfolio figure img{
+   height: 10rem;
+   width: 15rem;
+   object-fit: cover;
+}
+
+.Team {
+    margin-top: 4rem;
+    background-image: url("../Resources/images/blurred-road.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    row-gap: 2rem;
+
+}
+
+.Team img{
+    height: auto;
+    width: 10rem;
+    object-fit: cover;
+
+}
+
+.Team .image-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    font-size: 1.1rem;
+    align-items: flex-start;
+    
+}
+
+
+footer{
+    height: 20rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    
+}
